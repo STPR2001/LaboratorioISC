@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SCADA</title>
+    <link rel="stylesheet" href="index.css" />
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>SCADA</h1>
+
+      <div>
+        <label for="keyInput">Enviar clave de activación:</label>
+        <input type="text" id="keyInput" placeholder="Introduce la clave" />
+        <button style="margin-bottom: 10px" onclick="sendKey()">Enviar</button>
+      </div>
+
+      <div>
+        <label for="thresholdInput">Establecer umbral de temperatura:</label>
+        <input
+          type="number"
+          id="thresholdInput"
+          placeholder="Umbral de temperatura"
+        />
+        <button onclick="setThreshold()">Establecer</button>
+      </div>
+
+      <div id="data">Esperando datos de arduino...</div>
+    </div>
+  </body>
+</html>
